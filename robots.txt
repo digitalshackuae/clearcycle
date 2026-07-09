@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Exclude thank-you page from indexing to prevent conversion tracking issues
+Disallow: /thank-you.html
+Disallow: /admin-dashboard.html
+Disallow: /api/
+
+# Link to sitemap
+Sitemap: https://clearcycleit.co.uk/sitemap.xml

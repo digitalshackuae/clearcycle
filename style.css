@@ -491,6 +491,146 @@ a:hover {
     background-color: #50b65f !important;
 }
 
+/* ----------------------------------------------------
+   Floating "Call Us" Button (all pages, injected by main.js)
+   ---------------------------------------------------- */
+.floating-call-btn {
+    position: fixed;
+    right: var(--spacing-6);
+    bottom: var(--spacing-6);
+    z-index: 150;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    min-width: 60px;
+    padding: 0 18px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #6BE77E 0%, #17BD3D 100%);
+    color: #001023;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(21, 184, 58, 0.35), 0 0 0 1px rgba(21, 184, 58, 0.15);
+    overflow: hidden;
+    transition: box-shadow var(--transition-fast), transform var(--transition-fast);
+    animation: floating-call-pulse 18s infinite;
+}
+
+.floating-call-btn:hover,
+.floating-call-btn:focus-visible {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(21, 184, 58, 0.5), 0 0 20px rgba(21, 184, 58, 0.4);
+    animation-play-state: paused;
+}
+
+.floating-call-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.floating-call-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.floating-call-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 0;
+    opacity: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: max-width var(--transition-smooth), opacity var(--transition-smooth), margin var(--transition-smooth);
+}
+
+.floating-call-label {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.floating-call-number {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1.2;
+    opacity: 0.85;
+}
+
+.floating-call-tooltip {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 12px);
+    background-color: var(--color-primary);
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    padding: 8px 14px;
+    border-radius: 6px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transform: translateY(6px);
+    pointer-events: none;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .floating-call-btn:hover .floating-call-text,
+    .floating-call-btn:focus-visible .floating-call-text {
+        max-width: 160px;
+        opacity: 1;
+        margin-left: 12px;
+    }
+
+    .floating-call-btn:hover .floating-call-tooltip,
+    .floating-call-btn:focus-visible .floating-call-tooltip {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floating-call-pulse {
+    0%, 90%, 100% {
+        box-shadow: 0 4px 15px rgba(21, 184, 58, 0.35), 0 0 0 0 rgba(21, 184, 58, 0.5);
+    }
+    93% {
+        box-shadow: 0 4px 15px rgba(21, 184, 58, 0.45), 0 0 0 14px rgba(21, 184, 58, 0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .floating-call-btn {
+        animation: none;
+    }
+
+    .floating-call-btn,
+    .floating-call-text,
+    .floating-call-tooltip {
+        transition: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .floating-call-btn {
+        right: var(--spacing-4);
+        bottom: 92px;
+        height: 56px;
+        min-width: 56px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .floating-call-tooltip {
+        display: none;
+    }
+}
+
 .header-actions {
     display: flex;
     gap: var(--spacing-2);

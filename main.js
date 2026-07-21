@@ -9,7 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Inject and initialise sticky mobile CTA
     initStickyMobileCta();
-    
+
+    // Inject the floating "Call Us" button
+    initFloatingCallButton();
+
     // Wrap button arrows for hover animation
     wrapButtonArrows();
     
@@ -393,6 +396,30 @@ function initStickyMobileCta() {
             }
         }
     });
+}
+
+/**
+ * Injects the floating "Call Us" button shown on every page. Expands to reveal
+ * the phone number on hover (desktop only); collapses to an icon-only tap
+ * target on mobile, positioned clear of the sticky mobile CTA bar.
+ */
+function initFloatingCallButton() {
+    // Prevent double injection
+    if (document.querySelector('.floating-call-btn')) return;
+
+    const btn = document.createElement('a');
+    btn.href = 'tel:+447538779927';
+    btn.className = 'floating-call-btn';
+    btn.setAttribute('aria-label', 'Call Clearcycle IT now on 07538 779927');
+    btn.innerHTML = `
+        <span class="floating-call-icon" aria-hidden="true">&#128222;</span>
+        <span class="floating-call-text">
+            <span class="floating-call-label">Call Us</span>
+            <span class="floating-call-number">07538 779927</span>
+        </span>
+        <span class="floating-call-tooltip" aria-hidden="true">Need help? Call our team today.</span>
+    `;
+    document.body.appendChild(btn);
 }
 
 /**

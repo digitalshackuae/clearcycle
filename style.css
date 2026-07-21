@@ -516,6 +516,7 @@ a:hover {
 
 .floating-call-btn:hover,
 .floating-call-btn:focus-visible {
+    color: #001023;
     transform: translateY(-3px);
     box-shadow: 0 8px 24px rgba(21, 184, 58, 0.5), 0 0 20px rgba(21, 184, 58, 0.4);
     animation-play-state: paused;

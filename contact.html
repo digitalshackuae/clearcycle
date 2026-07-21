@@ -99,7 +99,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
 <!-- Custom Stylesheet -->
-<link href="style.css?v=1.3" rel="stylesheet"/>
+<link href="style.css?v=1.4" rel="stylesheet"/>
 <style>
         .contact-grid {
             display: grid;
@@ -224,7 +224,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Left: Form -->
 <div class="contact-form-box">
 <h3 style="margin-bottom: 20px;">Send Us an Enquiry</h3>
-<form id="general-enquiry-form" onsubmit="event.preventDefault(); window.location.href = 'thank-you.html?type=enquiry&amp;name=' + encodeURIComponent(document.getElementById('contact-name-page').value) + '&amp;org=' + encodeURIComponent(document.getElementById('contact-org-page').value);">
+<form id="general-enquiry-form" novalidate="">
 <div style="margin-bottom: 15px;">
 <label for="contact-name-page" style="display: block; font-size: 14px; font-weight: 600; margin-bottom: 5px; color: var(--color-primary);">Your Name *</label>
 <input id="contact-name-page" placeholder="e.g. Jane Smith" required="" style="width: 100%; padding: 10px; border: 1px solid var(--color-border); border-radius: var(--border-radius); font-size: 15px;" type="text"/>
@@ -638,6 +638,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </div>
 <!-- Custom Script -->
-<script src="main.js?v=1.1"></script>
+<script src="main.js?v=1.3"></script>
 </body>
 </html>

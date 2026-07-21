@@ -3134,8 +3134,16 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: var(--spacing-3);
     padding: var(--spacing-2) 0;
     border-bottom: 1px solid var(--color-border);
+}
+
+.input-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
 }
 
 .input-details label {
@@ -3145,9 +3153,18 @@ a:hover {
     color: var(--color-primary);
 }
 
+.item-category {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
 .counter-control {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
     background-color: var(--color-light-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius);
@@ -3157,8 +3174,8 @@ a:hover {
 .counter-btn {
     background: transparent;
     border: none;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
@@ -3310,6 +3327,21 @@ a:hover {
 
 .form-input.input-invalid {
     border-color: var(--color-secondary);
+}
+
+.form-inline-message {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: var(--spacing-3) var(--spacing-4);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-3);
+}
+
+.form-inline-message-error {
+    background-color: rgba(204, 51, 102, 0.08);
+    border: 1px solid rgba(204, 51, 102, 0.3);
+    color: var(--color-secondary);
 }
 
 .checkbox-container {
@@ -3465,6 +3497,10 @@ a:hover {
     .modal-split-grid { grid-template-columns: 1fr; }
     .modal-calculator-box { border-right: none; border-bottom: 1px solid var(--color-border); padding-right: 0; padding-bottom: var(--spacing-6); }
     .form-grid-2 { grid-template-columns: 1fr; }
+
+    .modal-large-layout { padding: var(--spacing-5); }
+    .counter-btn { width: 40px; height: 40px; font-size: 18px; }
+    .counter-control input { width: 40px; }
 }
 
 /* ----------------------------------------------------

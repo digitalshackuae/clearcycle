@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Inject the floating "Call Us" button
     initFloatingCallButton();
 
+    // Let visitors dismiss the booking modal via backdrop click or Escape
+    initBookingModalDismissal();
+
+    // Wire up the general enquiry form on contact.html to the backend
+    initGeneralEnquiryForm();
+
     // Wrap button arrows for hover animation
     wrapButtonArrows();
     
@@ -53,6 +59,28 @@ function closeBookingModal() {
     if (modal) {
         modal.classList.remove('active');
     }
+}
+
+/**
+ * Lets visitors close the booking modal by clicking the dimmed backdrop
+ * or pressing Escape, so they're never stuck without an obvious way back
+ * to browsing the rest of the site.
+ */
+function initBookingModalDismissal() {
+    const modal = document.getElementById('booking-modal');
+    if (!modal) return;
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeBookingModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+            closeBookingModal();
+        }
+    });
 }
 
 /**
@@ -152,18 +180,26 @@ function handleFormSubmit(event) {
     // Clear previous validations
     const invalidInputs = form.querySelectorAll('.input-invalid');
     invalidInputs.forEach(input => input.classList.remove('input-invalid'));
-    
+    clearFormMessage(form);
+
     // Run html5 validation checks
     if (!form.checkValidity()) {
+        let firstInvalid = null;
         const inputs = form.querySelectorAll('input, select');
         inputs.forEach(input => {
             if (!input.validity.valid) {
                 input.classList.add('input-invalid');
+                if (!firstInvalid) firstInvalid = input;
             }
         });
+        showFormMessage(form, 'Please fill in all required fields before submitting.', 'error');
+        if (firstInvalid) {
+            firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            firstInvalid.focus({ preventScroll: true });
+        }
         return;
     }
-    
+
     // Form is valid - retrieve fields
     const orgName = document.getElementById('org-name').value;
     const orgType = document.getElementById('org-type').value;
@@ -239,12 +275,99 @@ function handleFormSubmit(event) {
     })
     .catch(error => {
         console.error('Submission error:', error);
-        alert(`Sorry, there was an issue submitting your request: ${error.message}. Please try again or contact us directly.`);
+        showFormMessage(form, `Sorry, there was an issue submitting your request: ${error.message}. Please try again or contact us directly on 07538 779927.`, 'error');
     })
     .finally(() => {
         // Restore submit button
         submitBtn.disabled = false;
         submitBtn.textContent = originalBtnText;
+    });
+}
+
+/**
+ * Shows an inline validation/error message above the form's submit button,
+ * replacing the previous browser alert() with a message styled to match
+ * the site rather than an OS dialog.
+ */
+function showFormMessage(form, message, type) {
+    clearFormMessage(form);
+    const el = document.createElement('div');
+    el.className = `form-inline-message form-inline-message-${type}`;
+    el.setAttribute('role', 'alert');
+    el.textContent = message;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.insertAdjacentElement('beforebegin', el);
+}
+
+function clearFormMessage(form) {
+    const existing = form.querySelector('.form-inline-message');
+    if (existing) existing.remove();
+}
+
+/**
+ * Wires up the general enquiry form on contact.html to actually submit to
+ * the backend (previously it only faked success and redirected without
+ * sending the enquiry anywhere).
+ */
+function initGeneralEnquiryForm() {
+    const form = document.getElementById('general-enquiry-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        clearFormMessage(form);
+
+        if (!form.checkValidity()) {
+            const inputs = form.querySelectorAll('input, textarea');
+            let firstInvalid = null;
+            inputs.forEach(input => {
+                if (!input.validity.valid) {
+                    input.classList.add('input-invalid');
+                    if (!firstInvalid) firstInvalid = input;
+                } else {
+                    input.classList.remove('input-invalid');
+                }
+            });
+            showFormMessage(form, 'Please fill in all required fields before submitting.', 'error');
+            if (firstInvalid) {
+                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                firstInvalid.focus({ preventScroll: true });
+            }
+            return;
+        }
+
+        const name = document.getElementById('contact-name-page').value;
+        const company = document.getElementById('contact-org-page').value;
+        const phone = document.getElementById('contact-phone-page').value;
+        const email = document.getElementById('contact-email-page').value;
+        const message = document.getElementById('contact-message-page').value;
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        fetch('/api/quick-quote', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, company, phone, email, message })
+        })
+        .then(async response => {
+            const data = await response.json();
+            if (response.ok && data.success) {
+                window.location.href = `thank-you.html?type=enquiry&name=${encodeURIComponent(name)}&org=${encodeURIComponent(company)}`;
+            } else {
+                throw new Error(data.error || 'Failed to submit your enquiry');
+            }
+        })
+        .catch(error => {
+            console.error('Enquiry submission error:', error);
+            showFormMessage(form, `Sorry, there was an issue submitting your enquiry: ${error.message}. Please try again or call us directly on 07538 779927.`, 'error');
+        })
+        .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalBtnText;
+        });
     });
 }
 

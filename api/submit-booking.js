@@ -43,10 +43,37 @@ export default async function handler(req, res) {
             return res.status(400).json({ success: false, error: 'Missing required fields' });
         }
 
+        // Durable fallback record: always visible in Vercel function logs, even if
+        // no storage backend or Resend key is configured yet, so no booking is
+        // ever silently lost.
+        console.log('BOOKING REQUEST:', JSON.stringify({ orgName, orgType, contactName, contactEmail, contactPhone, addressStreet, addressCity, addressPostcode, collectionDate, collectionTime, requireDBS, requireOnsite, inventory, timestamp: new Date().toISOString() }));
+
+        // Save the lead immediately so it's captured regardless of whether the
+        // email notification below succeeds.
+        try {
+            await saveLead({
+                orgName,
+                orgType,
+                contactName,
+                contactEmail,
+                contactPhone,
+                addressStreet,
+                addressCity,
+                addressPostcode,
+                collectionDate,
+                collectionTime,
+                requireDBS,
+                requireOnsite,
+                inventory
+            });
+        } catch (dbErr) {
+            console.error('Database lead save error:', dbErr);
+        }
+
         const resendApiKey = process.env.RESEND_API_KEY;
         if (!resendApiKey) {
-            console.error('Missing RESEND_API_KEY environment variable');
-            return res.status(500).json({ success: false, error: 'Email service configuration error' });
+            console.warn('RESEND_API_KEY not configured - booking email notification skipped, lead saved via saveLead/log only.');
+            return res.status(200).json({ success: true });
         }
 
         // Get notification email list
@@ -57,8 +84,8 @@ export default async function handler(req, res) {
             .filter(email => email.length > 0);
 
         if (toEmails.length === 0) {
-            console.error('No notification email addresses configured');
-            return res.status(500).json({ success: false, error: 'No recipient email configured' });
+            console.warn('No notification email addresses configured - skipping email notification.');
+            return res.status(200).json({ success: true });
         }
 
         // Format dates nicely
@@ -269,6 +296,9 @@ export default async function handler(req, res) {
                 subject: subject,
                 html: html
             })
+        }).catch(err => {
+            console.error('Resend fetch error:', err);
+            return null;
         });
 
         // Prepare the ClickSend SMS request if credentials are configured
@@ -330,33 +360,23 @@ export default async function handler(req, res) {
             }
         }
 
-        const data = await emailResponse.json();
-
-        if (emailResponse.ok) {
+        // The lead was already saved above, so a failed or unreachable email
+        // send is logged but must not fail the visitor's submission - the
+        // booking has already been captured.
+        if (!emailResponse) {
+            console.error('Resend email request could not be sent (network error).');
+        } else if (!emailResponse.ok) {
             try {
-                await saveLead({
-                    orgName,
-                    orgType,
-                    contactName,
-                    contactEmail,
-                    contactPhone,
-                    addressStreet,
-                    addressCity,
-                    addressPostcode,
-                    collectionDate,
-                    collectionTime,
-                    requireDBS,
-                    requireOnsite,
-                    inventory
-                });
-            } catch (dbErr) {
-                console.error('Database lead save error:', dbErr);
+                const data = await emailResponse.json();
+                console.error('Resend API returned an error:', data);
+            } catch (e) {
+                console.error('Resend API returned an error (failed to parse response JSON)');
             }
-            return res.status(200).json({ success: true, id: data.id });
         } else {
-            console.error('Resend API returned an error:', data);
-            return res.status(emailResponse.status).json({ success: false, error: data.message || 'Failed to send email' });
+            console.log('Booking confirmation email sent successfully');
         }
+
+        return res.status(200).json({ success: true });
 
     } catch (error) {
         console.error('Serverless function error:', error);

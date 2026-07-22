@@ -6,6 +6,12 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "8746", "--bind", "127.0.0.1"],
       "port": 8746
+    },
+    {
+      "name": "clearcycleit-ruby",
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["server.rb"],
+      "port": 8080
     }
   ]
 }

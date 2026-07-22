@@ -4,3 +4,10 @@
 .env*.local
 .env.*
 .env*
+
+# macOS
+.DS_Store
+
+# local dev only (WEBrick server + its captured form submissions)
+server.rb
+leads.json

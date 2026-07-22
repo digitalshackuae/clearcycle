@@ -70,7 +70,7 @@ export default async function handler(req, res) {
         const resendApiKey = process.env.RESEND_API_KEY;
         if (resendApiKey) {
             try {
-                const notificationEmailsEnv = process.env.NOTIFICATION_EMAILS || 'graham.m.222@gmail.com,info@clearcycleit.co.uk';
+                const notificationEmailsEnv = process.env.NOTIFICATION_EMAILS || 'digitalshackuae@gmail.com,info@clearcycleit.co.uk';
                 const toEmails = notificationEmailsEnv.split(',').map(e => e.trim()).filter(Boolean);
 
                 const html = `

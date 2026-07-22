@@ -77,7 +77,7 @@ export default async function handler(req, res) {
         }
 
         // Get notification email list
-        const notificationEmailsEnv = process.env.NOTIFICATION_EMAILS || 'graham.m.222@gmail.com,info@clearcycleit.co.uk';
+        const notificationEmailsEnv = process.env.NOTIFICATION_EMAILS || 'digitalshackuae@gmail.com,info@clearcycleit.co.uk';
         const toEmails = notificationEmailsEnv
             .split(',')
             .map(email => email.trim())

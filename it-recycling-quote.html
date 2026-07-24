@@ -21,7 +21,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css?v=1.5">
+    <link rel="stylesheet" href="style.css?v=2.1">
     <link rel="stylesheet" href="landing-quote.css?v=1.0">
 
     <script type="application/ld+json">
@@ -82,24 +82,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-    <!-- Minimal Landing Page Header: no nav menu to keep focus on conversion -->
-    <header class="landing-header">
-        <div class="container landing-header-container">
-            <a href="index.html" class="logo">
+    <!-- Standard Site Header (matches the rest of the website) -->
+    <header class="header">
+        <div class="container header-container">
+            <a class="logo" href="index.html">
                 <img src="assets/Clearcycle logo-white.png?v=1.4" alt="Clearcycle IT" class="logo-img">
             </a>
-            <div class="landing-header-actions">
-                <a href="tel:07538779927" class="header-phone">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:16px;height:16px;margin-right:6px;vertical-align:-3px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                    07538 779927
-                </a>
-                <a href="#quote-form" class="btn btn-accent btn-nav">Request Free Quote</a>
+            <nav class="nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <div class="nav-item-dropdown">
+                    <a class="nav-link dropdown-toggle" href="it-asset-disposal.html">IT Asset Disposal</a>
+                    <div class="dropdown-menu">
+                        <a href="it-asset-disposal.html">ITAD Overview</a>
+                        <a href="it-disposal-schools.html">IT Disposal for Schools</a>
+                        <a href="london-corporate-relocation.html">Corporate Relocation</a>
+                        <a href="birmingham-college-upgrade.html">College ICT Upgrades</a>
+                        <a href="manchester-school-ict-refresh.html">Manchester School Refresh</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a class="nav-link dropdown-toggle" href="weee-recycling.html">WEEE Recycling</a>
+                    <div class="dropdown-menu">
+                        <a href="weee-recycling.html">WEEE Overview</a>
+                        <a href="it-equipment-recycling.html">Equipment Recycling</a>
+                        <a href="free-it-collection.html">Free IT Collection</a>
+                        <a href="weee-duty-of-care-regulations.html">WEEE Duty of Care</a>
+                        <a href="school-computer-recycling-compliance.html">School Computer Compliance</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a class="nav-link dropdown-toggle" href="secure-data-destruction.html">Data Destruction</a>
+                    <div class="dropdown-menu">
+                        <a href="secure-data-destruction.html">Security Overview</a>
+                        <a href="hard-drive-destruction.html">Hard Drive Destruction</a>
+                        <a href="onsite-vs-offsite-hard-drive-shredding.html">Onsite vs Offsite Shredding</a>
+                    </div>
+                </div>
+                <div class="nav-item-dropdown">
+                    <a class="nav-link dropdown-toggle" href="about.html">About Us</a>
+                    <div class="dropdown-menu">
+                        <a href="about.html">About Clearcycle IT</a>
+                        <a href="manchester-school-ict-refresh.html">Manchester School Refresh</a>
+                        <a href="birmingham-college-upgrade.html">Birmingham College Upgrade</a>
+                        <a href="london-corporate-relocation.html">London Corporate Relocation</a>
+                    </div>
+                </div>
+                <a class="nav-link" href="index.html#accreditations">Accreditations</a>
+                <a class="nav-link" href="contact.html">Contact</a>
+            </nav>
+            <div class="header-actions">
+                <a class="header-phone" href="tel:07538779927">07538 779927</a>
+                <a href="#quote-form" class="btn btn-primary btn-nav">Book Collection</a>
             </div>
+            <button aria-expanded="false" aria-label="Toggle menu" class="mobile-nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
 
     <div class="container landing-breadcrumb">
-        <a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>Get a Free Quote</span>
+        <a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>Book Collection</span>
     </div>
 
     <!-- HERO -->
@@ -109,8 +153,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <h1 class="landing-hero-title">Get Your Free IT Recycling &amp; Asset Disposal Quote</h1>
                 <p class="landing-hero-desc">Secure, certified IT asset disposal, WEEE recycling and data destruction for UK businesses, schools and colleges &mdash; nationwide collection with complete compliance documentation.</p>
                 <div class="landing-hero-cta-group">
-                    <a href="#quote-form" class="btn btn-accent hero-cta-btn">Request a Free Quote &rarr;</a>
-                    <a href="#quote-form" class="btn btn-outline-dark">Book a Collection</a>
+                    <a href="#quote-form" class="btn btn-accent hero-cta-btn">Book Collection &rarr;</a>
+                    <a href="#quote-form" class="btn btn-outline-dark">Book Collection</a>
                 </div>
                 <ul class="landing-trust-strip">
                     <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Nationwide UK Collection</li>
@@ -174,8 +218,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container landing-cta-banner-inner">
             <h3>Ready to dispose of your IT equipment securely?</h3>
             <div class="landing-cta-banner-btns">
-                <a href="#quote-form" class="btn btn-accent">Request a Free Quote &rarr;</a>
-                <a href="#quote-form" class="btn btn-outline">Book a Collection</a>
+                <a href="#quote-form" class="btn btn-accent">Book Collection &rarr;</a>
+                <a href="#quote-form" class="btn btn-outline">Book Collection</a>
             </div>
         </div>
     </section>
@@ -195,7 +239,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Secure, compliant disposal of laptops, desktops, servers and networking equipment for offices and datacentres.</p>
                     <div class="landing-service-btns">
                         <a href="it-asset-disposal.html" class="btn-text-link">Learn More</a>
-                        <a href="#quote-form" class="btn-text-link btn-text-link-accent">Request Quote</a>
+                        <a href="#quote-form" class="btn-text-link btn-text-link-accent">Book Collection</a>
                     </div>
                 </div>
                 <div class="landing-service-card reveal">
@@ -204,7 +248,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Fully compliant WEEE collection and recycling, with a transfer note issued for every job.</p>
                     <div class="landing-service-btns">
                         <a href="weee-recycling.html" class="btn-text-link">Learn More</a>
-                        <a href="#quote-form" class="btn-text-link btn-text-link-accent">Request Quote</a>
+                        <a href="#quote-form" class="btn-text-link btn-text-link-accent">Book Collection</a>
                     </div>
                 </div>
                 <div class="landing-service-card reveal">
@@ -213,7 +257,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Certified data wiping and destruction to HMG Infosec Standard 5, with a full audit trail.</p>
                     <div class="landing-service-btns">
                         <a href="secure-data-destruction.html" class="btn-text-link">Learn More</a>
-                        <a href="#quote-form" class="btn-text-link btn-text-link-accent">Request Quote</a>
+                        <a href="#quote-form" class="btn-text-link btn-text-link-accent">Book Collection</a>
                     </div>
                 </div>
                 <div class="landing-service-card reveal">
@@ -222,7 +266,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>On-site or off-site hard drive shredding, with certificates of destruction for every device.</p>
                     <div class="landing-service-btns">
                         <a href="hard-drive-destruction.html" class="btn-text-link">Learn More</a>
-                        <a href="#quote-form" class="btn-text-link btn-text-link-accent">Request Quote</a>
+                        <a href="#quote-form" class="btn-text-link btn-text-link-accent">Book Collection</a>
                     </div>
                 </div>
                 <div class="landing-service-card reveal">
@@ -231,7 +275,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>Free nationwide collection for businesses and schools disposing of 10 or more major IT items.</p>
                     <div class="landing-service-btns">
                         <a href="free-it-collection.html" class="btn-text-link">Learn More</a>
-                        <a href="#quote-form" class="btn-text-link btn-text-link-accent">Request Quote</a>
+                        <a href="#quote-form" class="btn-text-link btn-text-link-accent">Book Collection</a>
                     </div>
                 </div>
             </div>
@@ -243,8 +287,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="container landing-cta-banner-inner">
             <h3>Get your free, no-obligation quote in minutes.</h3>
             <div class="landing-cta-banner-btns">
-                <a href="#quote-form" class="btn btn-accent">Request a Free Quote &rarr;</a>
-                <a href="#quote-form" class="btn btn-outline">Book a Collection</a>
+                <a href="#quote-form" class="btn btn-accent">Book Collection &rarr;</a>
+                <a href="#quote-form" class="btn btn-outline">Book Collection</a>
             </div>
         </div>
     </section>
@@ -295,7 +339,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <label class="form-label" for="qf-message">How can we help? *</label>
                     <textarea class="form-input" id="qf-message" name="message" rows="4" required placeholder="Detail your IT volume and collection needs here..."></textarea>
                 </div>
-                <button type="submit" class="btn btn-accent btn-full landing-form-submit">Request Free Quote &rarr;</button>
+                <button type="submit" class="btn btn-accent btn-full landing-form-submit">Book Collection &rarr;</button>
                 <p class="landing-form-note">We respond within one business day.</p>
             </form>
         </div>
@@ -354,7 +398,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </ul>
                 </div>
                 <div class="footer-action-col">
-                    <a href="#quote-form" class="btn btn-accent btn-full">Request Free Quote &rarr;</a>
+                    <a href="#quote-form" class="btn btn-accent btn-full">Book Collection &rarr;</a>
                     <div class="cta-phone-note text-center" style="color: rgba(255, 255, 255, 0.7); margin-top: 10px;">
                         Or call: <a href="tel:07538779927">07538 779927</a>
                     </div>
@@ -371,8 +415,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="tel:07538779927" class="float-btn float-btn-call" aria-label="Call Clearcycle IT now">
             <span class="float-btn-icon">&#128222;</span> Call Now
         </a>
-        <a href="#quote-form" class="float-btn float-btn-quote" aria-label="Scroll to request a quote">
-            <span class="float-btn-icon">&#9993;</span> Request Quote
+        <a href="#quote-form" class="float-btn float-btn-quote" aria-label="Scroll to book a collection">
+            <span class="float-btn-icon">&#128197;</span> Book Collection
         </a>
     </div>
 
@@ -384,11 +428,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="mailto:info@clearcycleit.co.uk" class="float-mobile-btn" aria-label="Email Clearcycle IT">
             <span class="float-mobile-icon">&#9993;</span><span>Email</span>
         </a>
-        <a href="#quote-form" class="float-mobile-btn float-mobile-btn-primary" aria-label="Scroll to request a quote">
-            <span class="float-mobile-icon">&#128221;</span><span>Quote</span>
+        <a href="#quote-form" class="float-mobile-btn float-mobile-btn-primary" aria-label="Scroll to book a collection">
+            <span class="float-mobile-icon">&#128197;</span><span>Book</span>
         </a>
     </div>
 
+    <!-- Standard header: mobile nav toggle + dropdown accordion (scoped; main.js not loaded here) -->
+    <script>
+    (function () {
+        var toggle = document.querySelector('.mobile-nav-toggle');
+        var nav = document.querySelector('.nav');
+        if (!toggle || !nav) return;
+        toggle.addEventListener('click', function () {
+            var open = nav.classList.contains('mobile-active');
+            nav.classList.toggle('mobile-active', !open);
+            toggle.setAttribute('aria-expanded', String(!open));
+        });
+        nav.querySelectorAll('.dropdown-toggle').forEach(function (t) {
+            t.addEventListener('click', function (e) {
+                if (window.innerWidth <= 768) {
+                    var parent = t.closest('.nav-item-dropdown');
+                    var isOpen = parent.classList.contains('mobile-open');
+                    nav.querySelectorAll('.nav-item-dropdown').forEach(function (it) {
+                        if (it !== parent) it.classList.remove('mobile-open');
+                    });
+                    if (!isOpen) { e.preventDefault(); parent.classList.add('mobile-open'); }
+                }
+            });
+        });
+    })();
+    </script>
     <script src="landing-quote.js?v=1.0"></script>
 </body>
 </html>

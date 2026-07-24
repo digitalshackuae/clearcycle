@@ -503,7 +503,7 @@ function initStickyMobileCta() {
                 <span class="sticky-cta-title">Clearcycle IT</span>
                 <span class="sticky-cta-desc">Call <a href="tel:07538779927" style="color: var(--color-accent); font-weight: 600; text-decoration: underline;">07538 779927</a> or book online</span>
             </div>
-            <button onclick="openBookingModal()" class="btn btn-accent btn-sticky-cta">Book Free</button>
+            <button onclick="openBookingModal()" class="btn btn-accent btn-sticky-cta">Book Collection</button>
         </div>
     `;
     document.body.appendChild(cta);

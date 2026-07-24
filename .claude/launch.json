@@ -2,15 +2,8 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "clearcycleit-static",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8746", "--bind", "127.0.0.1"],
-      "port": 8746
-    },
-    {
-      "name": "clearcycleit-ruby",
-      "runtimeExecutable": "ruby",
-      "runtimeArgs": ["server.rb"],
+      "name": "clearcycleit",
+      "url": "http://localhost:8080",
       "port": 8080
     }
   ]

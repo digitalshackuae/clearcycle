@@ -5892,3 +5892,122 @@ a {
         padding-left: 24px;
     }
 }
+
+/* ====================================================================
+   TRUSTED BY OUR CUSTOMERS (#sec-reviews)
+   Two clickable rating cards (Google + Trustpilot). Side by side on
+   desktop, stacked on mobile. Premium Apple-inspired: whitespace, soft
+   shadows, rounded corners, smooth hover. Aggregate ratings only — the
+   score/count are set from the business's REAL current figures.
+   ==================================================================== */
+.tc-section {
+    padding: var(--spacing-16) 0;
+}
+
+.tc-head {
+    max-width: 720px;
+    margin: 0 auto var(--spacing-10) auto;
+    text-align: center;
+}
+
+.tc-rating-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--spacing-6);
+    max-width: 780px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
+.tc-rc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--spacing-2);
+    padding: var(--spacing-8) var(--spacing-6);
+    background: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: 22px;
+    box-shadow: 0 12px 40px rgba(22, 22, 63, 0.06);
+    text-decoration: none;
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
+}
+.tc-rc:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 55px rgba(22, 22, 63, 0.14);
+    border-color: var(--color-accent);
+}
+
+.tc-rc-logo { display: inline-flex; margin-bottom: var(--spacing-2); }
+
+.tc-rc-platform {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+}
+
+.tc-rc-score {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--color-primary);
+}
+
+/* Star row with precise partial fill (overlay clipped to width = rating/5) */
+.tc-rc-stars {
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: 2px;
+}
+.tc-rc-stars .tc-stars-base { color: #E1E1EA; }
+.tc-rc-stars .tc-stars-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    pointer-events: none;
+}
+.tc-stars-gold .tc-stars-fill { color: #FBBC05; }
+.tc-stars-green .tc-stars-fill { color: #00B67A; }
+
+.tc-rc-count {
+    font-size: 14px;
+    color: var(--color-text-muted);
+}
+
+.tc-rc-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: var(--spacing-3);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-link);
+    transition: gap 0.25s ease;
+}
+.tc-rc:hover .tc-rc-cta { gap: 12px; }
+
+@media (max-width: 640px) {
+    .tc-section { padding: var(--spacing-12) 0; }
+    .tc-rating-cards {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-5);
+        max-width: 420px;
+    }
+    .tc-rc { padding: var(--spacing-6) var(--spacing-5); }
+    .tc-rc-score { font-size: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tc-rc { transition: none; }
+    .tc-rc:hover { transform: none; }
+}

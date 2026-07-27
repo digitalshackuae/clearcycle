@@ -5,16 +5,18 @@
 
 /* CSS Variables */
 :root {
-    /* Colours */
-    --color-primary: #16163F;      /* Deep Navy/Purple */
-    --color-secondary: #CC3366;    /* Magenta Accent / Warning */
-    --color-accent: #61CE70;       /* Eco Green Accent */
+    /* Colours — Clear Cycle IT brand: teal primary, navy secondary, green accent */
+    --color-primary: #0B2338;      /* Deep Navy Blue (secondary brand) */
+    --color-secondary: #CC3366;    /* Warning / negative states */
+    --color-accent: #0A9AA5;       /* Teal — primary brand */
+    --color-accent-dark: #087E88;  /* Teal (hover / active) */
+    --color-green: #00913F;        /* Green — subtle eco accent */
     --color-background: #FFFFFF;   /* Clean White Background */
-    --color-text-primary: #000000; /* Rich Black */
-    --color-text-muted: #626282;   /* Muted Slate Gray */
-    --color-link: #4A9B24;         /* Leaf Green for links */
-    --color-light-bg: #F7F7FA;     /* Very Light Gray/Purple background */
-    --color-border: #E1E1EA;       /* Light border */
+    --color-text-primary: #0B2338; /* Navy text */
+    --color-text-muted: #5B6B7A;   /* Cool slate grey */
+    --color-link: #0A8089;         /* Deep teal for links */
+    --color-light-bg: #F3F6F8;     /* Cool light grey background */
+    --color-border: #E2E8ED;       /* Cool light border */
     
     /* Fonts */
     --font-heading: 'Montserrat', 'Arial', sans-serif;
@@ -41,10 +43,10 @@
     --transition-smooth: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     
     /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(22, 22, 63, 0.05);
-    --shadow-md: 0 4px 12px rgba(22, 22, 63, 0.08);
-    --shadow-lg: 0 8px 24px rgba(22, 22, 63, 0.12);
-    --shadow-glass: 0 8px 32px rgba(22, 22, 63, 0.15);
+    --shadow-sm: 0 2px 4px rgba(11, 35, 56, 0.05);
+    --shadow-md: 0 4px 12px rgba(11, 35, 56, 0.08);
+    --shadow-lg: 0 8px 24px rgba(11, 35, 56, 0.12);
+    --shadow-glass: 0 8px 32px rgba(11, 35, 56, 0.15);
 }
 
 /* Base Resets */
@@ -210,7 +212,7 @@ a:hover {
 
 /* Header & Navigation */
 .header {
-    background-color: rgba(22, 22, 63, 0.96);
+    background-color: rgba(11, 35, 56, 0.96);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     position: sticky;
@@ -343,13 +345,13 @@ a:hover {
 .btn-primary {
     background-color: var(--color-accent);
     color: var(--color-primary);
-    box-shadow: 0 4px 14px rgba(97, 206, 112, 0.15);
+    box-shadow: 0 4px 14px rgba(10, 154, 165, 0.15);
 }
 
 .btn-primary:hover {
-    background-color: #50b65f;
+    background-color: #087E88;
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(97, 206, 112, 0.35);
+    box-shadow: 0 6px 20px rgba(10, 154, 165, 0.35);
 }
 
 .btn-secondary {
@@ -365,31 +367,31 @@ a:hover {
 }
 
 .btn-accent {
-    background: linear-gradient(135deg, #6BE77E 0%, #17BD3D 100%);
-    color: #001023 !important; /* High contrast dark navy text */
+    background: var(--color-accent); /* solid teal — flat, premium */
+    color: var(--color-primary) !important; /* navy text — accessible, on-brand */
     font-weight: 700;
     font-size: 15px;
     padding: var(--spacing-3) var(--spacing-6); /* Roomier padding for prominent CTA */
     border: none;
-    box-shadow: 0 4px 15px rgba(21, 184, 58, 0.35), 0 0 0 1px rgba(21, 184, 58, 0.15);
+    box-shadow: 0 6px 18px rgba(10, 154, 165, 0.24);
 }
 
 .btn-accent:hover {
-    background: linear-gradient(135deg, #81F593 0%, #19D445 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(21, 184, 58, 0.55), 0 0 20px rgba(21, 184, 58, 0.45);
-    animation: none; /* Stop pulsing on hover */
+    background: var(--color-accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(10, 154, 165, 0.32);
+    animation: none;
 }
 
 @keyframes cta-pulse {
     0% {
-        box-shadow: 0 4px 15px rgba(21, 184, 58, 0.35), 0 0 0 0px rgba(21, 184, 58, 0.5);
+        box-shadow: 0 4px 15px rgba(10, 154, 165, 0.35), 0 0 0 0px rgba(10, 154, 165, 0.5);
     }
     70% {
-        box-shadow: 0 4px 22px rgba(21, 184, 58, 0.45), 0 0 0 12px rgba(21, 184, 58, 0);
+        box-shadow: 0 4px 22px rgba(10, 154, 165, 0.45), 0 0 0 12px rgba(10, 154, 165, 0);
     }
     100% {
-        box-shadow: 0 4px 15px rgba(21, 184, 58, 0.35), 0 0 0 0px rgba(21, 184, 58, 0);
+        box-shadow: 0 4px 15px rgba(10, 154, 165, 0.35), 0 0 0 0px rgba(10, 154, 165, 0);
     }
 }
 
@@ -429,7 +431,7 @@ a:hover {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(22, 22, 63, 0.95);
+    background-color: rgba(11, 35, 56, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -485,11 +487,11 @@ a:hover {
     padding: 10px 20px !important;
     background-color: var(--color-accent) !important;
     color: var(--color-primary) !important;
-    box-shadow: 0 4px 10px rgba(97, 206, 112, 0.3) !important;
+    box-shadow: 0 4px 10px rgba(10, 154, 165, 0.3) !important;
 }
 
 .btn-sticky-cta:hover {
-    background-color: #50b65f !important;
+    background-color: #087E88 !important;
 }
 
 /* ----------------------------------------------------
@@ -506,10 +508,10 @@ a:hover {
     min-width: 60px;
     padding: 0 18px;
     border-radius: 30px;
-    background: linear-gradient(135deg, #6BE77E 0%, #17BD3D 100%);
+    background: linear-gradient(135deg, #0A9AA5 0%, #087E88 100%);
     color: #001023;
     text-decoration: none;
-    box-shadow: 0 4px 15px rgba(21, 184, 58, 0.35), 0 0 0 1px rgba(21, 184, 58, 0.15);
+    box-shadow: 0 4px 15px rgba(10, 154, 165, 0.35), 0 0 0 1px rgba(10, 154, 165, 0.15);
     overflow: hidden;
     transition: box-shadow var(--transition-fast), transform var(--transition-fast);
     animation: floating-call-pulse 18s infinite;
@@ -519,7 +521,7 @@ a:hover {
 .floating-call-btn:focus-visible {
     color: #001023;
     transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(21, 184, 58, 0.5), 0 0 20px rgba(21, 184, 58, 0.4);
+    box-shadow: 0 8px 24px rgba(10, 154, 165, 0.5), 0 0 20px rgba(10, 154, 165, 0.4);
     animation-play-state: paused;
 }
 
@@ -599,10 +601,10 @@ a:hover {
 
 @keyframes floating-call-pulse {
     0%, 90%, 100% {
-        box-shadow: 0 4px 15px rgba(21, 184, 58, 0.35), 0 0 0 0 rgba(21, 184, 58, 0.5);
+        box-shadow: 0 4px 15px rgba(10, 154, 165, 0.35), 0 0 0 0 rgba(10, 154, 165, 0.5);
     }
     93% {
-        box-shadow: 0 4px 15px rgba(21, 184, 58, 0.45), 0 0 0 14px rgba(21, 184, 58, 0);
+        box-shadow: 0 4px 15px rgba(10, 154, 165, 0.45), 0 0 0 14px rgba(10, 154, 165, 0);
     }
 }
 
@@ -645,7 +647,7 @@ a:hover {
 
 /* SECTION 1: HERO SECTION */
 .hero {
-    background: radial-gradient(circle at 75% 30%, rgba(97, 206, 112, 0.15) 0%, rgba(22, 22, 63, 1) 75%), var(--color-primary);
+    background: radial-gradient(circle at 75% 30%, rgba(10, 154, 165, 0.15) 0%, rgba(11, 35, 56, 1) 75%), var(--color-primary);
     padding: var(--spacing-16) 0 var(--spacing-20) 0;
     color: #FFFFFF;
     position: relative;
@@ -750,7 +752,7 @@ a:hover {
 }
 
 .floating-card {
-    background-color: rgba(22, 22, 63, 0.85);
+    background-color: rgba(11, 35, 56, 0.85);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: var(--border-radius);
@@ -784,7 +786,7 @@ a:hover {
 }
 
 .check-icon {
-    background-color: rgba(97, 206, 112, 0.15);
+    background-color: rgba(10, 154, 165, 0.15);
     color: var(--color-accent);
 }
 
@@ -815,7 +817,7 @@ a:hover {
 
 /* SECTION 1 BAR: 3-Step Process Bar */
 .process-section-bar {
-    background-color: rgba(22, 22, 63, 0.98);
+    background-color: rgba(11, 35, 56, 0.98);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: var(--spacing-8) 0;
     color: #FFFFFF;
@@ -957,7 +959,7 @@ a:hover {
 
 /* SECTION 2: WHO WE HELP */
 .card-circle-icon {
-    background-color: rgba(97, 206, 112, 0.1);
+    background-color: rgba(10, 154, 165, 0.1);
     color: var(--color-accent);
     width: 60px;
     height: 60px;
@@ -1133,7 +1135,7 @@ a:hover {
 }
 
 .icon-circle-lg {
-    background-color: rgba(97, 206, 112, 0.1);
+    background-color: rgba(10, 154, 165, 0.1);
     color: var(--color-accent);
     width: 48px;
     height: 48px;
@@ -1213,7 +1215,7 @@ a:hover {
 }
 
 .icon-shield-check {
-    background-color: rgba(97, 206, 112, 0.15);
+    background-color: rgba(10, 154, 165, 0.15);
     color: var(--color-accent);
     width: 44px;
     height: 44px;
@@ -1464,7 +1466,7 @@ a:hover {
 }
 
 .small-icon-circle {
-    background-color: rgba(97, 206, 112, 0.1);
+    background-color: rgba(10, 154, 165, 0.1);
     color: var(--color-accent);
     width: 32px;
     height: 32px;
@@ -1499,7 +1501,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     gap: var(--spacing-6);
-    box-shadow: 0 15px 35px rgba(22, 22, 63, 0.12);
+    box-shadow: 0 15px 35px rgba(11, 35, 56, 0.12);
 }
 
 .alert-split-left {
@@ -1541,8 +1543,8 @@ a:hover {
 }
 
 .doc-badge-pill {
-    background-color: rgba(97, 206, 112, 0.08);
-    border: 1px solid rgba(97, 206, 112, 0.15);
+    background-color: rgba(10, 154, 165, 0.08);
+    border: 1px solid rgba(10, 154, 165, 0.15);
     border-radius: 20px;
     padding: 6px 14px;
     font-size: 12px;
@@ -1555,8 +1557,8 @@ a:hover {
 }
 
 .doc-badge-pill:hover {
-    background-color: rgba(97, 206, 112, 0.15);
-    border-color: rgba(97, 206, 112, 0.3);
+    background-color: rgba(10, 154, 165, 0.15);
+    border-color: rgba(10, 154, 165, 0.3);
     transform: translateY(-1px);
 }
 
@@ -1595,8 +1597,8 @@ a:hover {
 
 /* SECTION 6: COMPLIANCE & ACCREDITATIONS */
 .compliance-evidence-badge {
-    background-color: rgba(97, 206, 112, 0.08);
-    border: 1px solid rgba(97, 206, 112, 0.15);
+    background-color: rgba(10, 154, 165, 0.08);
+    border: 1px solid rgba(10, 154, 165, 0.15);
     border-radius: var(--border-radius);
     padding: var(--spacing-2) var(--spacing-4);
     display: inline-flex;
@@ -1622,14 +1624,14 @@ a:hover {
     background: linear-gradient(135deg, #FFFFFF 0%, #F9FAF5 100%);
     border: 1px solid rgba(225, 225, 234, 0.7);
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(22, 22, 63, 0.02);
+    box-shadow: 0 4px 12px rgba(11, 35, 56, 0.02);
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .card-mini-info:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px rgba(97, 206, 112, 0.08), 0 4px 12px rgba(22, 22, 63, 0.04);
-    border-color: rgba(97, 206, 112, 0.4);
+    box-shadow: 0 20px 40px rgba(10, 154, 165, 0.08), 0 4px 12px rgba(11, 35, 56, 0.04);
+    border-color: rgba(10, 154, 165, 0.4);
 }
 
 .mini-card-icon {
@@ -1689,7 +1691,7 @@ a:hover {
 
 .logo-box:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(22, 22, 63, 0.06);
+    box-shadow: 0 10px 22px rgba(11, 35, 56, 0.06);
 }
 
 /* Accreditations: downloadable ISO certificate cards */
@@ -1729,7 +1731,7 @@ a:hover {
 
 .cert-doc-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(22, 22, 63, 0.06);
+    box-shadow: 0 10px 22px rgba(11, 35, 56, 0.06);
 }
 
 .cert-doc-card.cert-doc-9001 { border-top-color: #0D47A1; }
@@ -1932,7 +1934,7 @@ a:hover {
 }
 
 .badge-leaf-circle {
-    background-color: rgba(97, 206, 112, 0.1);
+    background-color: rgba(10, 154, 165, 0.1);
     color: var(--color-accent);
     width: 40px;
     height: 40px;
@@ -2062,8 +2064,8 @@ a:hover {
 .icon-support::before { content: "\2706"; }
 
 .bottom-green-text-bar {
-    background-color: rgba(97, 206, 112, 0.06);
-    border: 1px solid rgba(97, 206, 112, 0.15);
+    background-color: rgba(10, 154, 165, 0.06);
+    border: 1px solid rgba(10, 154, 165, 0.15);
     border-radius: var(--border-radius);
     padding: var(--spacing-3) var(--spacing-5);
     display: flex;
@@ -2100,7 +2102,7 @@ a:hover {
 .case-study-card:hover {
     transform: translateY(-8px);
     border-color: var(--color-accent);
-    box-shadow: 0 12px 30px rgba(97, 206, 112, 0.15);
+    box-shadow: 0 12px 30px rgba(10, 154, 165, 0.15);
     background: rgba(255, 255, 255, 0.04);
 }
 
@@ -2396,7 +2398,7 @@ a:hover {
 }
 
 .help-icon-circle, .help-icon-circle-calendar {
-    background-color: rgba(22, 22, 63, 0.05);
+    background-color: rgba(11, 35, 56, 0.05);
     color: var(--color-primary);
     width: 44px;
     height: 44px;
@@ -2466,13 +2468,13 @@ a:hover {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(22, 22, 63, 0.02);
+    box-shadow: 0 10px 30px rgba(11, 35, 56, 0.02);
     transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .box-green {
-    background: linear-gradient(135deg, rgba(97, 206, 112, 0.02) 0%, rgba(255, 255, 255, 0.8) 100%);
-    border: 1px solid rgba(97, 206, 112, 0.22);
+    background: linear-gradient(135deg, rgba(10, 154, 165, 0.02) 0%, rgba(255, 255, 255, 0.8) 100%);
+    border: 1px solid rgba(10, 154, 165, 0.22);
 }
 
 .box-red {
@@ -2482,8 +2484,8 @@ a:hover {
 
 .box-green:hover {
     transform: translateY(-5px);
-    border-color: rgba(97, 206, 112, 0.45);
-    box-shadow: 0 20px 40px rgba(97, 206, 112, 0.08);
+    border-color: rgba(10, 154, 165, 0.45);
+    box-shadow: 0 20px 40px rgba(10, 154, 165, 0.08);
 }
 
 .box-red:hover {
@@ -2570,7 +2572,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     gap: var(--spacing-6);
-    box-shadow: 0 10px 25px rgba(22, 22, 63, 0.08);
+    box-shadow: 0 10px 25px rgba(11, 35, 56, 0.08);
 }
 
 .banner-content {
@@ -2580,7 +2582,7 @@ a:hover {
 }
 
 .banner-icon-question {
-    background-color: rgba(97, 206, 112, 0.15);
+    background-color: rgba(10, 154, 165, 0.15);
     color: var(--color-accent);
     width: 44px;
     height: 44px;
@@ -2589,7 +2591,7 @@ a:hover {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    box-shadow: 0 0 15px rgba(97, 206, 112, 0.1);
+    box-shadow: 0 0 15px rgba(10, 154, 165, 0.1);
 }
 
 .banner-text h4 {
@@ -2616,14 +2618,14 @@ a:hover {
     padding: var(--spacing-3) var(--spacing-6);
     cursor: pointer;
     white-space: nowrap;
-    box-shadow: 0 4px 14px rgba(97, 206, 112, 0.3);
+    box-shadow: 0 4px 14px rgba(10, 154, 165, 0.3);
     transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .banner-btn:hover {
     background-color: #52bf61;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(97, 206, 112, 0.4);
+    box-shadow: 0 6px 20px rgba(10, 154, 165, 0.4);
 }
 
 /* Nationwide card UK map */
@@ -2669,16 +2671,16 @@ a:hover {
     display: flex;
     align-items: center;
     gap: var(--spacing-3);
-    background: rgba(22, 22, 63, 0.02);
-    border: 1px solid rgba(22, 22, 63, 0.05);
+    background: rgba(11, 35, 56, 0.02);
+    border: 1px solid rgba(11, 35, 56, 0.05);
     padding: 8px 12px;
     border-radius: 6px;
     transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 .city-item:hover {
-    background: rgba(97, 206, 112, 0.05);
-    border-color: rgba(97, 206, 112, 0.2);
+    background: rgba(10, 154, 165, 0.05);
+    border-color: rgba(10, 154, 165, 0.2);
 }
 
 .pin-green {
@@ -2751,7 +2753,7 @@ a:hover {
 
 .logo-box-mini:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 25px rgba(22, 22, 63, 0.06);
+    box-shadow: 0 12px 25px rgba(11, 35, 56, 0.06);
 }
 
 .cert-badge-header {
@@ -2777,7 +2779,7 @@ a:hover {
     letter-spacing: 0.5px;
 }
 
-.cert-status-tag.green-tag { background-color: rgba(97, 206, 112, 0.12); color: #2E7D32; }
+.cert-status-tag.green-tag { background-color: rgba(10, 154, 165, 0.12); color: #2E7D32; }
 .cert-status-tag.blue-tag { background-color: rgba(21, 101, 192, 0.1); color: #1565C0; }
 .cert-status-tag.dark-tag { background-color: rgba(0, 45, 98, 0.08); color: #002D62; }
 
@@ -2813,7 +2815,7 @@ a:hover {
 
 /* MAIN FULL-WIDTH DARK FOOTER */
 .footer-dark {
-    background: radial-gradient(circle at 85% 20%, rgba(97, 206, 112, 0.12) 0%, rgba(22, 22, 63, 1) 85%), var(--color-primary);
+    background: radial-gradient(circle at 85% 20%, rgba(10, 154, 165, 0.12) 0%, rgba(11, 35, 56, 1) 85%), var(--color-primary);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     padding: 80px 0 var(--spacing-8) 0;
     color: #FFFFFF;
@@ -3005,7 +3007,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(22, 22, 63, 0.85);
+    background-color: rgba(11, 35, 56, 0.85);
     backdrop-filter: blur(8px);
     z-index: 200;
     display: flex;
@@ -3195,8 +3197,8 @@ a:hover {
 }
 
 .alert-success {
-    background-color: rgba(97, 206, 112, 0.05);
-    border: 1px solid rgba(97, 206, 112, 0.15);
+    background-color: rgba(10, 154, 165, 0.05);
+    border: 1px solid rgba(10, 154, 165, 0.15);
     color: var(--color-link);
 }
 
@@ -3211,7 +3213,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(22, 22, 63, 0.08);
+    background-color: rgba(11, 35, 56, 0.08);
     backdrop-filter: blur(4px);
     z-index: 10;
     display: flex;
@@ -3353,7 +3355,7 @@ a:hover {
 
 /* Success Modal specific */
 .modal-icon-wrapper {
-    background-color: rgba(97, 206, 112, 0.1);
+    background-color: rgba(10, 154, 165, 0.1);
     color: var(--color-accent);
     width: 54px;
     height: 54px;
@@ -3515,7 +3517,7 @@ a:hover {
 .interactive-overlay a:focus,
 .interactive-overlay button:focus {
     outline: 2px solid var(--color-accent);
-    background: rgba(97, 206, 112, 0.15);
+    background: rgba(10, 154, 165, 0.15);
 }
 
 @media (min-width: 769px) {
@@ -3979,7 +3981,7 @@ a:hover {
 
 .step-connector-line {
     height: 2px;
-    background: rgba(97, 206, 112, 0.25);
+    background: rgba(10, 154, 165, 0.25);
     width: 30px;
     flex-shrink: 0;
 }
@@ -4252,7 +4254,7 @@ a:hover {
     }
     .hero-feature-item:hover {
         background: rgba(11, 26, 45, 0.8) !important;
-        border-color: rgba(97, 206, 112, 0.3) !important;
+        border-color: rgba(10, 154, 165, 0.3) !important;
         transform: translateY(-2px) !important;
     }
     .hero-feature-item::after {
@@ -4424,7 +4426,7 @@ a:hover {
     justify-content: center;
     width: 36px;
     height: 36px;
-    background-color: rgba(97, 206, 112, 0.15);
+    background-color: rgba(10, 154, 165, 0.15);
     border-radius: 50%;
 }
 
@@ -4595,7 +4597,7 @@ a:hover {
     justify-content: center;
     width: 52px;
     height: 52px;
-    background-color: rgba(97, 206, 112, 0.12);
+    background-color: rgba(10, 154, 165, 0.12);
     border-radius: 50%;
     color: var(--color-accent);
     flex-shrink: 0;
@@ -4747,7 +4749,7 @@ a:hover {
 }
 
 .card-hover-lift:hover {
-    box-shadow: 0 8px 28px rgba(97, 206, 112, 0.12), var(--shadow-md);
+    box-shadow: 0 8px 28px rgba(10, 154, 165, 0.12), var(--shadow-md);
 }
 
 /* Logo box hover refinement */
@@ -4757,7 +4759,7 @@ a:hover {
 
 .logo-box:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(22, 22, 63, 0.1);
+    box-shadow: 0 6px 20px rgba(11, 35, 56, 0.1);
     border-color: var(--color-accent);
 }
 
@@ -4768,7 +4770,7 @@ a:hover {
 
 .timeline-step-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(97, 206, 112, 0.15);
+    box-shadow: 0 6px 20px rgba(10, 154, 165, 0.15);
 }
 
 /* Hero badge item hover */
@@ -4797,7 +4799,7 @@ a:hover {
 
 .stat-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(97, 206, 112, 0.18);
+    box-shadow: 0 8px 24px rgba(10, 154, 165, 0.18);
 }
 
 .stat-card:hover .stat-number {
@@ -4828,7 +4830,7 @@ a:hover {
 
 .case-study-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(97, 206, 112, 0.15);
+    box-shadow: 0 8px 24px rgba(10, 154, 165, 0.15);
 }
 
 
@@ -4922,7 +4924,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #50b65f;
+    background: #087E88;
 }
 
 
@@ -5353,8 +5355,8 @@ a {
 }
 
 .sustainability-banner {
-    background: rgba(97, 206, 112, 0.1);
-    border: 1px solid rgba(97, 206, 112, 0.2);
+    background: rgba(10, 154, 165, 0.1);
+    border: 1px solid rgba(10, 154, 165, 0.2);
     border-radius: var(--border-radius);
     padding: var(--spacing-4) var(--spacing-6);
     display: flex;
@@ -5431,16 +5433,16 @@ a {
 
     .hero-badge-chip:hover {
         background: rgba(11, 26, 45, 0.8) !important;
-        border-color: rgba(97, 206, 112, 0.3) !important;
+        border-color: rgba(10, 154, 165, 0.3) !important;
         transform: translateY(-2px) !important;
-        box-shadow: 0 6px 16px rgba(97, 206, 112, 0.1) !important;
+        box-shadow: 0 6px 16px rgba(10, 154, 165, 0.1) !important;
     }
 
     .badge-chip-icon {
         width: 24px !important;
         height: 24px !important;
         color: var(--color-accent) !important;
-        background: rgba(97, 206, 112, 0.1) !important;
+        background: rgba(10, 154, 165, 0.1) !important;
         border-radius: 50% !important;
         padding: 4px !important;
         display: flex !important;
@@ -5658,8 +5660,8 @@ a {
 .cert-vector-badge {
     width: 42px;
     height: 42px;
-    background: rgba(97, 206, 112, 0.08);
-    border: 1px solid rgba(97, 206, 112, 0.2);
+    background: rgba(10, 154, 165, 0.08);
+    border: 1px solid rgba(10, 154, 165, 0.2);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -5670,9 +5672,9 @@ a {
 }
 
 .cert-logo-item:hover .cert-vector-badge {
-    background: rgba(97, 206, 112, 0.15);
+    background: rgba(10, 154, 165, 0.15);
     border-color: var(--color-accent);
-    box-shadow: 0 0 12px rgba(97, 206, 112, 0.2);
+    box-shadow: 0 0 12px rgba(10, 154, 165, 0.2);
 }
 
 .cert-vector-badge svg {
@@ -5688,7 +5690,7 @@ a {
     background-color: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: 20px;
-    box-shadow: 0 4px 20px rgba(22, 22, 63, 0.02);
+    box-shadow: 0 4px 20px rgba(11, 35, 56, 0.02);
 }
 
 .our-certs-title {
@@ -5720,7 +5722,7 @@ a {
 
 .cert-card-wrapper:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(22, 22, 63, 0.06);
+    box-shadow: 0 12px 24px rgba(11, 35, 56, 0.06);
     border-color: #CBD5E1;
 }
 
@@ -5794,7 +5796,7 @@ a {
     top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(10px);
-    background: rgba(22, 22, 63, 0.98);
+    background: rgba(11, 35, 56, 0.98);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -5832,7 +5834,7 @@ a {
 }
 
 .dropdown-menu a:hover {
-    background-color: rgba(97, 206, 112, 0.1);
+    background-color: rgba(10, 154, 165, 0.1);
     color: var(--color-accent);
     padding-left: 30px; /* Micro-slide highlight */
 }
@@ -5917,8 +5919,8 @@ a {
     gap: 8px;
     margin-top: var(--spacing-5);
     padding: 8px 18px;
-    background: rgba(97, 206, 112, 0.10);
-    border: 1px solid rgba(97, 206, 112, 0.28);
+    background: rgba(10, 154, 165, 0.10);
+    border: 1px solid rgba(10, 154, 165, 0.28);
     border-radius: 999px;
     font-family: var(--font-heading);
     font-weight: 700;
@@ -5947,13 +5949,13 @@ a {
     background: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: 22px;
-    box-shadow: 0 12px 40px rgba(22, 22, 63, 0.06);
+    box-shadow: 0 12px 40px rgba(11, 35, 56, 0.06);
     text-decoration: none;
     transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s ease;
 }
 .tc-rc:hover {
     transform: translateY(-6px);
-    box-shadow: 0 22px 55px rgba(22, 22, 63, 0.14);
+    box-shadow: 0 22px 55px rgba(11, 35, 56, 0.14);
     border-color: var(--color-accent);
 }
 

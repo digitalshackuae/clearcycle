@@ -5910,6 +5910,24 @@ a {
     text-align: center;
 }
 
+/* Subtle NHS trust badge — generic shield icon in brand colours (NOT the NHS logo) */
+.tc-nhs-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: var(--spacing-5);
+    padding: 8px 18px;
+    background: rgba(97, 206, 112, 0.10);
+    border: 1px solid rgba(97, 206, 112, 0.28);
+    border-radius: 999px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    color: var(--color-primary);
+}
+.tc-nhs-badge svg { color: var(--color-accent); flex-shrink: 0; }
+
 .tc-rating-cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));

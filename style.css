@@ -3654,11 +3654,9 @@ a:hover {
 }
 
 .hero-rebuild {
-    background:
-        radial-gradient(1100px 520px at 88% 8%, rgba(10, 154, 165, 0.10), transparent 60%),
-        linear-gradient(180deg, #FFFFFF 0%, #EEF3F6 100%);
+    background: #001023 url('assets/Section 1/hero-background.png') no-repeat right bottom / auto 100%;
     padding: 40px 0 0 0;
-    color: var(--color-primary);
+    color: #FFFFFF;
     position: relative;
     overflow: visible;
 }
@@ -3682,7 +3680,7 @@ a:hover {
     font-weight: 800;
     line-height: 1.1;
     margin-bottom: 16px;
-    color: var(--color-primary);
+    color: #FFFFFF;
     letter-spacing: -1px;
 }
 
@@ -3692,7 +3690,7 @@ a:hover {
 
 .hero-rebuild-desc {
     font-size: 16px;
-    color: var(--color-text-muted);
+    color: #BAC7D5;
     line-height: 1.6;
     margin-bottom: 24px;
     max-width: 540px;
@@ -3784,38 +3782,6 @@ a:hover {
     align-items: center;
     min-height: 460px;
     width: 100%;
-}
-
-/* Soft teal glow accent behind the showcase (modern, replaces the old ring) */
-.hero-rebuild-visual::before {
-    content: '';
-    position: absolute;
-    width: 420px;
-    height: 420px;
-    right: -20px;
-    top: 0;
-    background: radial-gradient(circle, rgba(10, 154, 165, 0.18), transparent 65%);
-    border-radius: 50%;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* Devices "showcase" panel — dark product frame on the light hero */
-.hero-showcase {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 560px;
-    border-radius: 22px;
-    overflow: hidden;
-    line-height: 0;
-    box-shadow: 0 30px 60px rgba(11, 35, 56, 0.20), 0 2px 6px rgba(11, 35, 56, 0.08);
-}
-
-.hero-showcase-img {
-    display: block;
-    width: 100%;
-    height: auto;
 }
 
 .hero-leaf-overlay {
@@ -4231,9 +4197,8 @@ a:hover {
 @media (max-width: 768px) {
     .hero-rebuild {
         padding: 40px 0 30px 0;
-        background:
-            radial-gradient(700px 380px at 80% 6%, rgba(10, 154, 165, 0.10), transparent 60%),
-            linear-gradient(180deg, #FFFFFF 0%, #EEF3F6 100%);
+        background: linear-gradient(135deg, rgba(0, 16, 35, 0.9) 30%, rgba(0, 16, 35, 0.5) 100%), 
+                    url('assets/Section 1/hero-background.png') no-repeat 80% center / cover;
         overflow: hidden;
     }
     .hero-rebuild-grid {
@@ -5253,9 +5218,7 @@ a {
 
 .service-hero {
     padding: 100px 0;
-    background:
-        radial-gradient(1100px 520px at 88% 8%, rgba(10, 154, 165, 0.10), transparent 60%),
-        linear-gradient(180deg, #FFFFFF 0%, #EEF3F6 100%);
+    background: #001023 url('assets/Section 1/hero-background.png') no-repeat right bottom / auto 100%;
 }
 
 .service-hero-title {
@@ -5273,9 +5236,7 @@ a {
 
 .compliance-hero {
     padding: 60px 0;
-    background:
-        radial-gradient(1100px 520px at 88% 8%, rgba(10, 154, 165, 0.10), transparent 60%),
-        linear-gradient(180deg, #FFFFFF 0%, #EEF3F6 100%);
+    background: #001023 url('assets/Section 1/hero-background.png') no-repeat right bottom / auto 100%;
 }
 
 .compliance-hero-title {
@@ -5292,9 +5253,7 @@ a {
 @media (max-width: 768px) {
     .service-hero {
         padding: 60px 0;
-        background:
-        radial-gradient(1100px 520px at 88% 8%, rgba(10, 154, 165, 0.10), transparent 60%),
-        linear-gradient(180deg, #FFFFFF 0%, #EEF3F6 100%);
+        background: #001023 url('assets/Section 1/hero-background.png') no-repeat 80% center / cover;
     }
     .service-hero-title {
         font-size: 32px !important;
@@ -5305,9 +5264,7 @@ a {
     }
     .compliance-hero {
         padding: 40px 0;
-        background:
-        radial-gradient(1100px 520px at 88% 8%, rgba(10, 154, 165, 0.10), transparent 60%),
-        linear-gradient(180deg, #FFFFFF 0%, #EEF3F6 100%);
+        background: #001023 url('assets/Section 1/hero-background.png') no-repeat 80% center / cover;
     }
     .compliance-hero-title {
         font-size: 28px !important;

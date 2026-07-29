@@ -6031,3 +6031,32 @@ a {
     .tc-rc { transition: none; }
     .tc-rc:hover { transform: none; }
 }
+
+/* ====================================================================
+   FACILITY / FLEET PHOTOS — real photography bands (shared)
+   ==================================================================== */
+.facility-photo-band {
+    max-width: 1000px;
+    margin: var(--spacing-10) auto 0 auto;
+}
+
+.facility-photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+}
+
+.facility-photo-caption {
+    text-align: center;
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-top: var(--spacing-3);
+}
+
+@media (max-width: 640px) {
+    .facility-photo-band { margin-top: var(--spacing-8); }
+    .facility-photo { border-radius: 12px; }
+}

@@ -3654,7 +3654,7 @@ a:hover {
 }
 
 .hero-rebuild {
-    background: #001023 url('assets/Section 1/hero-background.png') no-repeat right bottom / auto 100%;
+    background: linear-gradient(90deg, rgba(11,35,56,0.94) 0%, rgba(11,35,56,0.82) 38%, rgba(11,35,56,0.45) 70%, rgba(11,35,56,0.30) 100%), #001023 url('assets/clearcycle-van-fleet.jpg') no-repeat center center / cover;
     padding: 40px 0 0 0;
     color: #FFFFFF;
     position: relative;
@@ -4197,8 +4197,8 @@ a:hover {
 @media (max-width: 768px) {
     .hero-rebuild {
         padding: 40px 0 30px 0;
-        background: linear-gradient(135deg, rgba(0, 16, 35, 0.9) 30%, rgba(0, 16, 35, 0.5) 100%), 
-                    url('assets/Section 1/hero-background.png') no-repeat 80% center / cover;
+        background: linear-gradient(180deg, rgba(11, 35, 56, 0.86) 0%, rgba(11, 35, 56, 0.74) 100%),
+                    url('assets/clearcycle-van-fleet.jpg') no-repeat center center / cover;
         overflow: hidden;
     }
     .hero-rebuild-grid {

@@ -645,6 +645,12 @@ a:hover {
     padding: 6px 12px;
 }
 
+/* Secondary "Quick B2B Quote" header CTA — only shown on roomy desktops;
+   below 992px the full nav + phone + Book Collection already fill the bar. */
+@media (max-width: 991px) {
+    .header-quote-btn { display: none; }
+}
+
 /* SECTION 1: HERO SECTION */
 .hero {
     background: radial-gradient(circle at 75% 30%, rgba(10, 154, 165, 0.15) 0%, rgba(11, 35, 56, 1) 75%), var(--color-primary);

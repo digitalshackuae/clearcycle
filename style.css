@@ -1751,6 +1751,13 @@ a:hover {
     margin-bottom: var(--spacing-3);
 }
 
+.cert-doc-icon img.cert-doc-logo {
+    height: 88px;
+    width: auto;
+    margin-bottom: var(--spacing-3);
+    display: block;
+}
+
 .cert-doc-title {
     font-size: 1.1rem;
     color: var(--color-primary);

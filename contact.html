@@ -147,6 +147,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-sm);
         }
+        /* Contact hero: two-column layout with real photo (matches the quote page) */
+        .contact-hero {
+            background: radial-gradient(circle at 75% 30%, rgba(10, 154, 165, 0.15) 0%, rgba(11, 35, 56, 1) 75%), var(--color-primary);
+            padding: var(--spacing-12) 0 var(--spacing-16) 0;
+        }
+        .contact-hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: var(--spacing-12);
+            align-items: center;
+            text-align: left;
+        }
+        .contact-hero-photo {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
+        }
+        @media (max-width: 768px) {
+            .contact-hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: var(--spacing-8);
+            }
+            .contact-hero-visual { order: -1; }
+        }
     </style>
 </meta></head>
 <body>
@@ -215,13 +242,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 </header>
 <!-- HERO SECTION -->
-<section class="service-hero">
-<div class="container text-center">
+<section class="service-hero contact-hero">
+<div class="container contact-hero-grid">
+<div class="contact-hero-content">
 <span class="section-tagline text-accent">GET IN TOUCH</span>
 <h1 class="service-hero-title">Book IT Collection</h1>
-<p class="service-hero-desc" style="max-width: 700px; margin: 0 auto;">
+<p class="service-hero-desc">
                 Have questions about our collection criteria or compliance processes? Get in touch with our Manchester-based team.
             </p>
+</div>
+<div class="contact-hero-visual">
+<img src="assets/worker_loading_van.png" alt="Clearcycle IT technician loading a server into the collection van" width="560" height="560" class="contact-hero-photo"/>
+</div>
 </div>
 </section>
 <!-- SECTION 2: CONTACT GRID -->

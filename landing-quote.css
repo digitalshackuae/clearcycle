@@ -47,7 +47,7 @@
 
 /* ===== Hero ===== */
 .landing-hero {
-    background: radial-gradient(circle at 75% 30%, rgba(97, 206, 112, 0.15) 0%, rgba(22, 22, 63, 1) 75%), var(--color-primary);
+    background: radial-gradient(circle at 75% 30%, rgba(10, 154, 165, 0.15) 0%, rgba(11, 35, 56, 1) 75%), var(--color-primary);
     padding: var(--spacing-12) 0 var(--spacing-16) 0;
     color: #FFFFFF;
 }
@@ -127,6 +127,11 @@
     width: 100%;
     height: auto;
     display: block;
+}
+
+.landing-hero-photo {
+    border-radius: 16px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.28);
 }
 
 /* ===== Generic Section Wrapper ===== */
@@ -467,7 +472,7 @@
         right: 0;
         bottom: 0;
         z-index: 950;
-        background-color: rgba(22, 22, 63, 0.97);
+        background-color: rgba(11, 35, 56, 0.97);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border-top: 1px solid rgba(255, 255, 255, 0.1);

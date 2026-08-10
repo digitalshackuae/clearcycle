@@ -275,7 +275,7 @@ function handleFormSubmit(event) {
     })
     .catch(error => {
         console.error('Submission error:', error);
-        showFormMessage(form, `Sorry, there was an issue submitting your request: ${error.message}. Please try again or contact us directly on 0151 404 2788.`, 'error');
+        showFormMessage(form, `Sorry, there was an issue submitting your request: ${error.message}. Please try again or contact us directly on 07538 779927.`, 'error');
     })
     .finally(() => {
         // Restore submit button
@@ -362,7 +362,7 @@ function initGeneralEnquiryForm() {
         })
         .catch(error => {
             console.error('Enquiry submission error:', error);
-            showFormMessage(form, `Sorry, there was an issue submitting your enquiry: ${error.message}. Please try again or call us directly on 0151 404 2788.`, 'error');
+            showFormMessage(form, `Sorry, there was an issue submitting your enquiry: ${error.message}. Please try again or call us directly on 07538 779927.`, 'error');
         })
         .finally(() => {
             submitBtn.disabled = false;
@@ -501,7 +501,7 @@ function initStickyMobileCta() {
         <div class="sticky-cta-content">
             <div class="sticky-cta-text">
                 <span class="sticky-cta-title">Clearcycle IT</span>
-                <span class="sticky-cta-desc">Call <a href="tel:01514042788" style="color: var(--color-accent); font-weight: 600; text-decoration: underline;">0151 404 2788</a> or book online</span>
+                <span class="sticky-cta-desc">Call <a href="tel:07538779927" style="color: var(--color-accent); font-weight: 600; text-decoration: underline;">07538 779927</a> or book online</span>
             </div>
             <button onclick="openBookingModal()" class="btn btn-accent btn-sticky-cta">Book Collection</button>
         </div>
@@ -531,14 +531,14 @@ function initFloatingCallButton() {
     if (document.querySelector('.floating-call-btn')) return;
 
     const btn = document.createElement('a');
-    btn.href = 'tel:+441514042788';
+    btn.href = 'tel:+447538779927';
     btn.className = 'floating-call-btn';
-    btn.setAttribute('aria-label', 'Call Clearcycle IT now on 0151 404 2788');
+    btn.setAttribute('aria-label', 'Call Clearcycle IT now on 07538 779927');
     btn.innerHTML = `
         <span class="floating-call-icon" aria-hidden="true">&#128222;</span>
         <span class="floating-call-text">
             <span class="floating-call-label">Call Us</span>
-            <span class="floating-call-number">0151 404 2788</span>
+            <span class="floating-call-number">07538 779927</span>
         </span>
         <span class="floating-call-tooltip" aria-hidden="true">Need help? Call our team today.</span>
     `;

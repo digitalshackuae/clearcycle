@@ -1,0 +1,14 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/blog",
+      "destination": "https://clearcycleblog-kupuo.projectbeta.co.uk/"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "https://clearcycleblog-kupuo.projectbeta.co.uk/:path*"
+    }
+  ]
+}

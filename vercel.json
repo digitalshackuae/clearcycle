@@ -6,8 +6,8 @@
       "destination": "https://clearcycleblog-kupuo.projectbeta.co.uk/"
     },
     {
-      "source": "/blog/:path*",
-      "destination": "https://clearcycleblog-kupuo.projectbeta.co.uk/:path*"
+      "source": "/blog/(.*)",
+      "destination": "https://clearcycleblog-kupuo.projectbeta.co.uk/$1"
     }
   ]
 }

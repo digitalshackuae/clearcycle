@@ -175,21 +175,49 @@
     border-color: #00E5FF;
 }
 
-.ppc-support-tag {
+/* HERO SOCIAL PROOF & TRUST ROW */
+.ppc-hero-social-proof {
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-top: 16px;
-    color: rgba(255, 255, 255, 0.75);
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 15px;
+}
+
+.ppc-hero-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.ppc-hero-rating .ppc-star-gold {
+    color: #F59E0B;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+}
+
+.ppc-hero-rating-text strong {
+    color: #FFFFFF;
+    font-weight: 700;
+}
+
+.ppc-support-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255, 255, 255, 0.78);
     font-size: 12.5px;
     font-weight: 600;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .ppc-support-tag svg {
-    width: 15px;
-    height: 15px;
+    width: 14px;
+    height: 14px;
     color: #00E5FF;
 }
 
@@ -570,6 +598,13 @@
         font-size: 12px;
     }
 
+    .ppc-hero-social-proof {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-top: 12px;
+    }
+
     /* Keep floating call button positioned nicely below interactive cards */
     .floating-call-btn {
         bottom: 84px !important;
@@ -606,5 +641,201 @@
         align-items: flex-start;
         gap: 10px;
         padding: 0 8px;
+    }
+}
+
+
+/* ====================================================
+   GOOGLE REVIEWS / SOCIAL PROOF SECTION
+   ==================================================== */
+.ppc-reviews-section {
+    background-color: #FFFFFF;
+    padding: 54px 0 58px 0;
+    border-bottom: 1px solid #E2E8ED;
+}
+
+.ppc-reviews-header {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 34px auto;
+}
+
+.ppc-reviews-eyebrow {
+    color: #0A9AA5;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.ppc-reviews-title {
+    font-family: var(--font-heading, 'Montserrat', sans-serif);
+    font-size: 30px;
+    font-weight: 800;
+    color: #0B2338;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.ppc-rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 5px 14px;
+    margin-bottom: 12px;
+}
+
+.ppc-stars {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.ppc-star-icon {
+    width: 16px;
+    height: 16px;
+    color: #F59E0B;
+}
+
+.ppc-rating-text {
+    font-size: 13px;
+    color: #334155;
+    font-weight: 500;
+}
+
+.ppc-rating-text strong {
+    color: #0B2338;
+    font-weight: 700;
+}
+
+.ppc-reviews-subhead {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #5B6B7A;
+    margin: 0 auto;
+}
+
+/* REVIEWS GRID */
+.ppc-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+    margin-bottom: 30px;
+}
+
+.ppc-review-card {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 24px 22px;
+    box-shadow: 0 4px 16px rgba(11, 35, 56, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.ppc-review-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(11, 35, 56, 0.08);
+    border-color: rgba(10, 154, 165, 0.4);
+}
+
+.ppc-card-stars {
+    margin-bottom: 12px;
+}
+
+.ppc-star-gold {
+    color: #F59E0B;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.ppc-review-quote {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #334155;
+    margin-bottom: 18px;
+    flex-grow: 1;
+    font-style: normal;
+}
+
+.ppc-reviewer-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    border-top: 1px solid #F1F5F9;
+}
+
+.ppc-reviewer-name {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0B2338;
+}
+
+.ppc-reviewer-source {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #64748B;
+}
+
+.ppc-google-icon {
+    flex-shrink: 0;
+}
+
+.ppc-reviews-footer-trust {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748B;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+    .ppc-reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 22px;
+    }
+
+    .ppc-reviews-section {
+        padding: 42px 0 44px 0;
+    }
+
+    .ppc-reviews-title {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ppc-reviews-section {
+        padding: 34px 0 38px 0;
+    }
+
+    .ppc-reviews-title {
+        font-size: 22px;
+        line-height: 1.25;
+    }
+
+    .ppc-review-card {
+        padding: 18px 16px;
+    }
+
+    .ppc-review-quote {
+        font-size: 13.5px;
+        line-height: 1.55;
     }
 }

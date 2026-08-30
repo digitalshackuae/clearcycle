@@ -567,7 +567,7 @@
             linear-gradient(180deg, rgba(6, 18, 32, 0.94) 0%, rgba(7, 23, 38, 0.98) 100%),
             url('/assets/clearcycle-van-fleet.jpg');
         background-position: center top;
-        padding: 28px 0 36px 0;
+        padding: 26px 0 32px 0;
     }
     
     .ppc-h1 {
@@ -577,11 +577,25 @@
     
     .ppc-subhead {
         font-size: 14.5px;
+        margin-bottom: 16px;
     }
     
+    /* 2x2 Benefits Grid on Mobile */
     .ppc-value-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 18px;
+    }
+
+    .ppc-value-item {
+        padding: 7px 9px;
+        font-size: 12px;
         gap: 7px;
+    }
+
+    .ppc-val-icon {
+        width: 15px;
+        height: 15px;
     }
     
     .ppc-hero-actions {
@@ -593,16 +607,57 @@
         justify-content: center;
         width: 100%;
     }
-    
-    .ppc-trust-badge {
-        font-size: 12px;
-    }
 
+    /* Centered Social Proof & Trust Badge on Mobile */
     .ppc-hero-social-proof {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         gap: 6px;
-        margin-top: 12px;
+        margin: 12px auto 0 auto;
+        width: 100%;
+    }
+
+    .ppc-hero-rating {
+        justify-content: center;
+    }
+
+    .ppc-support-tag {
+        justify-content: center;
+    }
+
+    /* Clean Compact Trust Strip Checklist on Mobile */
+    .ppc-trust-strip {
+        padding: 14px 0;
+    }
+
+    .ppc-trust-container {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 360px;
+        margin: 0 auto;
+        gap: 0;
+        padding: 0 12px;
+    }
+
+    .ppc-trust-badge {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 13px;
+        font-weight: 600;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .ppc-trust-badge:last-child {
+        border-bottom: none;
+    }
+
+    .ppc-trust-icon {
+        width: 18px;
+        height: 18px;
     }
 
     /* Keep floating call button positioned nicely below interactive cards */
@@ -620,6 +675,16 @@
     .ppc-h1 {
         font-size: 25px;
     }
+
+    .ppc-value-grid {
+        gap: 6px;
+    }
+
+    .ppc-value-item {
+        padding: 6px 7px;
+        font-size: 11.5px;
+        gap: 5px;
+    }
     
     .ppc-calc-card {
         padding: 16px 14px;
@@ -636,11 +701,9 @@
         height: 34px;
     }
     
-    .ppc-trust-container {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 0 8px;
+    .ppc-trust-badge {
+        font-size: 12.5px;
+        padding: 7px 0;
     }
 }
 

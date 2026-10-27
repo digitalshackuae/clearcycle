@@ -2,10 +2,8 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
     <loc>https://clearcycleit.co.uk/sitemap-pages.xml</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-10-27</lastmod>
   </sitemap>
-  <sitemap>
-    <loc>https://clearcycleit.co.uk/blog/sitemap_index.xml</loc>
-    <lastmod>2026-08-30</lastmod>
-  </sitemap>
+  <!-- Re-add when the blog is live and returns 200:
+  <sitemap><loc>https://clearcycleit.co.uk/blog/sitemap_index.xml</loc></sitemap> -->
 </sitemapindex>

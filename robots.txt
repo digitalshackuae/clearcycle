@@ -1,10 +1,12 @@
 User-agent: *
 Allow: /
 
-# Exclude thank-you page from indexing to prevent conversion tracking issues
-Disallow: /thank-you.html
+# Private / non-search pages (clean URL and .html forms both listed)
+Disallow: /admin-dashboard
 Disallow: /admin-dashboard.html
+Disallow: /thank-you
+Disallow: /thank-you.html
 Disallow: /api/
 
-# Link to sitemap
+# Sitemap index
 Sitemap: https://clearcycleit.co.uk/sitemap.xml

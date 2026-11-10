@@ -5231,7 +5231,7 @@ a {
 
 .service-hero {
     padding: 100px 0;
-    background: #001023 url('assets/Section 1/hero-background.png') no-repeat right bottom / auto 100%;
+    background: #001023 url('assets/Section 1/hero-background.jpg') no-repeat right bottom / auto 100%;
 }
 
 .service-hero-title {
@@ -5249,7 +5249,7 @@ a {
 
 .compliance-hero {
     padding: 60px 0;
-    background: #001023 url('assets/Section 1/hero-background.png') no-repeat right bottom / auto 100%;
+    background: #001023 url('assets/Section 1/hero-background.jpg') no-repeat right bottom / auto 100%;
 }
 
 .compliance-hero-title {
@@ -5266,7 +5266,7 @@ a {
 @media (max-width: 768px) {
     .service-hero {
         padding: 60px 0;
-        background: #001023 url('assets/Section 1/hero-background.png') no-repeat 80% center / cover;
+        background: #001023 url('assets/Section 1/hero-background-mobile.jpg') no-repeat 80% center / cover;
     }
     .service-hero-title {
         font-size: 32px !important;
@@ -5277,7 +5277,7 @@ a {
     }
     .compliance-hero {
         padding: 40px 0;
-        background: #001023 url('assets/Section 1/hero-background.png') no-repeat 80% center / cover;
+        background: #001023 url('assets/Section 1/hero-background-mobile.jpg') no-repeat 80% center / cover;
     }
     .compliance-hero-title {
         font-size: 28px !important;

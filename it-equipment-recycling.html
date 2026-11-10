@@ -3,11 +3,23 @@
 <html lang="en-GB">
 <head>
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script>
+/* Tracking (Tag Manager, Google Analytics, Ads, Clarity) starts on the first visitor interaction,
+   or 6 seconds after the page has loaded, so it does not compete with the page for the main thread. */
+(function(){var started=false;
+function start(){if(started)return;started=true;
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-MPF5FMSJ');</script>
+})(window,document,'script','dataLayer','GTM-MPF5FMSJ');
+var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id=G-0FDFQ0E4X6';document.head.appendChild(g);}
+var ev=['scroll','pointerdown','keydown','touchstart','mousemove'];
+function go(){ev.forEach(function(e){removeEventListener(e,go)});start();}
+ev.forEach(function(e){addEventListener(e,go,{passive:true})});
+addEventListener('load',function(){setTimeout(start,6000);});
+})();
+</script>
 <!-- End Google Tag Manager -->
 <meta charset="utf-8"/>
 <script type="application/ld+json">
@@ -142,7 +154,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 }
 </script>
 <!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-0FDFQ0E4X6"></script>
 <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -174,7 +185,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Google Fonts -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;family=Roboto:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/></noscript>
 <!-- Custom Stylesheet -->
 <link rel="preload" as="image" href="assets/Section%201/hero-background-mobile.jpg" media="(max-width: 768px)" fetchpriority="high"/>
 <link rel="preload" as="image" href="assets/Section%201/hero-background.jpg" media="(min-width: 769px)" fetchpriority="high"/>

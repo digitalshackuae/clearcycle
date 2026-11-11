@@ -6081,3 +6081,10 @@ a {
     .facility-photo-band { margin-top: var(--spacing-8); }
     .facility-photo { border-radius: 12px; }
 }
+
+/* Images that carry width/height attributes (added so the browser can reserve space)
+   keep their proportions when CSS only constrains the width. :where() keeps this at zero
+   specificity, so any class that sets its own height still wins. */
+:where(img[width][height]) {
+    height: auto;
+}

@@ -5231,7 +5231,7 @@ a {
 
 .service-hero {
     padding: 100px 0;
-    background: #001023 url('assets/Section 1/hero-background.jpg') no-repeat right bottom / auto 100%;
+    background: linear-gradient(90deg, rgba(11,35,56,0.94) 0%, rgba(11,35,56,0.82) 38%, rgba(11,35,56,0.45) 70%, rgba(11,35,56,0.30) 100%), #001023 url('assets/clearcycle-van-fleet.jpg') no-repeat center center / cover;
 }
 
 .service-hero-title {
@@ -5249,7 +5249,7 @@ a {
 
 .compliance-hero {
     padding: 60px 0;
-    background: #001023 url('assets/Section 1/hero-background.jpg') no-repeat right bottom / auto 100%;
+    background: linear-gradient(90deg, rgba(11,35,56,0.94) 0%, rgba(11,35,56,0.82) 38%, rgba(11,35,56,0.45) 70%, rgba(11,35,56,0.30) 100%), #001023 url('assets/clearcycle-van-fleet.jpg') no-repeat center 72% / cover;
 }
 
 .compliance-hero-title {
@@ -5266,7 +5266,7 @@ a {
 @media (max-width: 768px) {
     .service-hero {
         padding: 60px 0;
-        background: #001023 url('assets/Section 1/hero-background-mobile.jpg') no-repeat 80% center / cover;
+        background: linear-gradient(180deg, rgba(11, 35, 56, 0.86) 0%, rgba(11, 35, 56, 0.74) 100%), #001023 url('assets/clearcycle-van-fleet.jpg') no-repeat center center / cover;
     }
     .service-hero-title {
         font-size: 32px !important;
@@ -5277,7 +5277,7 @@ a {
     }
     .compliance-hero {
         padding: 40px 0;
-        background: #001023 url('assets/Section 1/hero-background-mobile.jpg') no-repeat 80% center / cover;
+        background: linear-gradient(180deg, rgba(11, 35, 56, 0.86) 0%, rgba(11, 35, 56, 0.74) 100%), #001023 url('assets/clearcycle-van-fleet.jpg') no-repeat center 72% / cover;
     }
     .compliance-hero-title {
         font-size: 28px !important;
